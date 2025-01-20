@@ -1,0 +1,45 @@
+#
+# General
+#
+
+namespace: shkeeper
+external_ip: 
+
+dev:
+  imagePullSecrets:
+
+storageClassName:
+
+#
+# Shkeeper
+#
+
+shkeeper:
+  image: vsyshost/shkeeper:2.2.5
+  port: 5000
+
+
+#
+# Tron
+#
+
+tron_fullnode:
+  image: vsyshost/javatron:GreatVoyage-v4.7.7
+  enabled: false
+  url: http://java-tron:8090
+  solidity_url: http://java-tron:8091
+  mainnet: true
+  JAVA_TOOL_OPTIONS: ""
+  nodeSelector: {}
+  tolerations: []
+
+tron_shkeeper:
+  image: gr4ybull/tron-shkeeper:v1.0.0
+  host: 'tron-shkeeper'
+  port: 6000
+
+trx:
+  enabled: true
+usdt:
+  enabled: true
+
