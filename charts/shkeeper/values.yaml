@@ -3,7 +3,7 @@
 #
 
 namespace: shkeeper
-external_ip: 
+# external_ip: 
 
 dev:
   imagePullSecrets:
